@@ -1,5 +1,14 @@
 function generateTimestamps(){
     var date = document.querySelector('input[type="datetime-local"]');
+
+    document.getElementById("short-time").innerHTML = "";
+    document.getElementById("long-time").innerHTML = "";
+    document.getElementById("short-date").innerHTML = "";
+    document.getElementById("long-date").innerHTML = "";
+    document.getElementById("short-date-time").innerHTML = "";
+    document.getElementById("long-date-time").innerHTML = "";
+    document.getElementById("relative-time").innerHTML = "";
+
     if(date.value == ''){
         var p = document.createElement("p");
         var text = document.createTextNode("Please enter a date");
@@ -21,13 +30,13 @@ function generateTimestamps(){
 
     var locale = getLang();
 
-    document.getElementById("short-time").appendChild(document.createTextNode(baseDate.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', hour12: true })));
-    document.getElementById("long-time").appendChild(document.createTextNode(baseDate.toLocaleTimeString(locale)));
-    document.getElementById("short-date").appendChild(document.createTextNode(baseDate.toLocaleDateString(locale)));
-    document.getElementById("long-date").appendChild(document.createTextNode(baseDate.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })));
-    document.getElementById("short-date-time").appendChild(document.createTextNode(baseDate.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }) + " " + baseDate.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', hour12: true })));
-    document.getElementById("long-date-time").appendChild(document.createTextNode(baseDate.toLocaleDateString(locale, { day: 'numeric', month: 'long', weekday: 'long', year: 'numeric' }) + " " + baseDate.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', hour12: true })));
-    document.getElementById("relative-time").appendChild(document.createTextNode(getRelativeTime()));
+    document.getElementById("short-time").innerHTML = baseDate.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("long-time").innerHTML = baseDate.toLocaleTimeString(locale);
+    document.getElementById("short-date").innerHTML = baseDate.toLocaleDateString(locale);
+    document.getElementById("long-date").innerHTML = baseDate.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+    document.getElementById("short-date-time").innerHTML = baseDate.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }) + " " + baseDate.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("long-date-time").innerHTML = baseDate.toLocaleDateString(locale, { day: 'numeric', month: 'long', weekday: 'long', year: 'numeric' }) + " " + baseDate.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("relative-time").innerHTML = getRelativeTime();
 }
 
 function getRelativeTime(){
