@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="scripts/main.js"></script>
+    <title>Discord Timestamp Generator</title>
+</head>
+<body>
+    <div class="box">
+        <input type="datetime-local">
+        <break></break>
+        <button onclick="generateTimestamps()">Generate</button>
+    </div>
+
+    <div class="simple-container" style="display: none;">
+        <h1>Generated timestamps</h1>
+        <div class="generated-dates">
+            <p>Short time: </p> <code id="short-time"></code><button onclick="copyShortTime()" class="bi bi-clipboard"></button>
+            <p>Long time: </p> <code id="long-time"></code><button onclick="copyLongTime()" class="bi bi-clipboard"></button>
+            <p>Short date: </p> <code id="short-date"></code><button onclick="copyShortDate()" class="bi bi-clipboard"></button>
+            <p>Long date: </p> <code id="long-date"></code><button onclick="copyLongDate()" class="bi bi-clipboard"></button>
+            <p>Short date & time: </p> <code id ="short-date-time"></code><button onclick="copyShortDateTime()" class="bi bi-clipboard"></button>
+            <p>Long date & time: </p> <code id="long-date-time"></code><button onclick="copyLongDateTime()" class="bi bi-clipboard"></button>
+            <p>Realative time: </p> <code id="relative-time"></code><button onclick="copyRelativeTime()" class="bi bi-clipboard"></button>
+        </div>
+    </div>
+</body>
+</html>
