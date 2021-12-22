@@ -23,13 +23,6 @@ function generateTimestamps(){
     try {document.getElementsByClassName("error")[0].remove();} catch(err){ }
     document.getElementsByClassName("simple-container")[0].setAttribute("style", "display: block;");
     var baseDate = new Date(date.value);
-    var unixEpoch = baseDate.getTime();
-    var month = baseDate.getMonth();
-    var day = baseDate.getDate();
-    var year = baseDate.getFullYear();
-    var hour = baseDate.getHours();
-    var minute = baseDate.getMinutes();
-    var second = baseDate.getSeconds();
 
     var locale = getLang();
 
@@ -124,65 +117,11 @@ function getLang() {
     }
 }
 
-function copyRelativeTime(){
+function copyText(flag){
     var date = document.querySelector('input[type="datetime-local"]');
     var baseDate = new Date(date.value);
     var unixEpoch = baseDate.getTime();
     var unix = unixEpoch / 1000;
-    var discordTimestamp = `<t:${unix}:R>`
-    navigator.clipboard.writeText(discordTimestamp);
-}
-
-function copyLongDateTime(){
-    var date = document.querySelector('input[type="datetime-local"]');
-    var baseDate = new Date(date.value);
-    var unixEpoch = baseDate.getTime();
-    var unix = unixEpoch / 1000;
-    var discordTimestamp = `<t:${unix}:F>`
-    navigator.clipboard.writeText(discordTimestamp);
-}
-
-function copyShortDateTime(){
-    var date = document.querySelector('input[type="datetime-local"]');
-    var baseDate = new Date(date.value);
-    var unixEpoch = baseDate.getTime();
-    var unix = unixEpoch / 1000;
-    var discordTimestamp = `<t:${unix}:f>`
-    navigator.clipboard.writeText(discordTimestamp);
-}
-
-function copyLongDate(){
-    var date = document.querySelector('input[type="datetime-local"]');
-    var baseDate = new Date(date.value);
-    var unixEpoch = baseDate.getTime();
-    var unix = unixEpoch / 1000;
-    var discordTimestamp = `<t:${unix}:D>`
-    navigator.clipboard.writeText(discordTimestamp);
-}
-
-function copyShortDate(){
-    var date = document.querySelector('input[type="datetime-local"]');
-    var baseDate = new Date(date.value);
-    var unixEpoch = baseDate.getTime();
-    var unix = unixEpoch / 1000;
-    var discordTimestamp = `<t:${unix}:d>`
-    navigator.clipboard.writeText(discordTimestamp);
-}
-
-function copyLongTime(){
-    var date = document.querySelector('input[type="datetime-local"]');
-    var baseDate = new Date(date.value);
-    var unixEpoch = baseDate.getTime();
-    var unix = unixEpoch / 1000;
-    var discordTimestamp = `<t:${unix}:T>`
-    navigator.clipboard.writeText(discordTimestamp);
-}
-
-function copyShortTime(){
-    var date = document.querySelector('input[type="datetime-local"]');
-    var baseDate = new Date(date.value);
-    var unixEpoch = baseDate.getTime();
-    var unix = unixEpoch / 1000;
-    var discordTimestamp = `<t:${unix}:t>`
+    var discordTimestamp = `<t:${unix}:${flag}>`
     navigator.clipboard.writeText(discordTimestamp);
 }
