@@ -10,6 +10,9 @@ function generateTimestamps(){
     document.getElementById("relative-time").innerHTML = "";
 
     if(date.value == ''){
+        if (document.getElementsByClassName("error").length == 1) {
+            return;
+        }
         var p = document.createElement("p");
         var text = document.createTextNode("Please enter a date");
         p.className += "error";
