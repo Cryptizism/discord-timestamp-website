@@ -43,7 +43,7 @@ body {
 }
 
 p {
-	font-size: 16px;
+	font-size: 1em;
 }
 
 h1 {
@@ -78,6 +78,14 @@ code {
     margin: 16px 0;
     width: fit-content;
     height: fit-content;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer {
+	bottom: 0;
 }
 
 hr {
