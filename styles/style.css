@@ -87,14 +87,14 @@ a {
 }
 
 main{
-	min-height: 95vmin;
+	min-height: 95vh;
 }
 
 footer {
     position: relative;
     width: 100vw;
     text-align: center;
-    height: 5vmin;
+    height: 5vh;
     background-color: #131313;
     display: flex;
     flex-direction: column;
