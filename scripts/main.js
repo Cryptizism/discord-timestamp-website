@@ -10,14 +10,7 @@ function generateTimestamps(){
     document.getElementById("relative-time").innerHTML = "";
 
     if(date.value == ''){
-        if (document.getElementsByClassName("error").length == 1) {
-            return;
-        }
-        var p = document.createElement("p");
-        var text = document.createTextNode("Please enter a date");
-        p.className += "error";
-        p.appendChild(text);
-        document.body.appendChild(p);
+        toastr.error('Please enter a date & time')
         return;
     }
     try {document.getElementsByClassName("error")[0].remove();} catch(err){ }
@@ -124,4 +117,5 @@ function copyText(flag){
     var unix = unixEpoch / 1000;
     var discordTimestamp = `<t:${unix}:${flag}>`
     navigator.clipboard.writeText(discordTimestamp);
+    toastr.info('Coppied to clipboard.')
 }
