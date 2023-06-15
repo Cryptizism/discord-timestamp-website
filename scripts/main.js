@@ -117,5 +117,5 @@ function copyText(flag){
     var unix = unixEpoch / 1000;
     var discordTimestamp = `<t:${unix}:${flag}>`
     navigator.clipboard.writeText(discordTimestamp);
-    toastr.info('Coppied to clipboard.')
+    toastr.info('Copied to clipboard.')
 }
